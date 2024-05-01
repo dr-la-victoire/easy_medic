@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Your messages{% endblock %} {% block
+content %}
+<h2 class="text">Here are your messages!</h2>
+<br />
+{% for mes in message %}
+<div class="card textarea" style="width: 18rem">
+  <div class="message-container">
+    <p>
+      <b style="margin-left: 5px">From</b> {{ mes.sender.username }} on {{
+      mes.date }}
+    </p>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">{{ mes.message }}</li>
+    </ul>
+    <br />
+    <a
+      href="{{ url_for('views.send_messages') }}"
+      class="btn btn-primary"
+      style="text-align: center"
+      >Reply</a
+    >
+  </div>
+</div>
+<br />
+{% endfor %} {% endblock %}

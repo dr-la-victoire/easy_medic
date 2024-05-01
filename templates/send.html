@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %}Send a message{% endblock %} {% block
+content %}
+<h2 class="form-header">Send a Message!</h2>
+<form method="post">
+  <div class="form-group">
+    <input
+      type="text "
+      class="form-control"
+      id="recipient"
+      name="recipient"
+      placeholder="Enter Recipient's Username"
+    />
+    <br />
+    <textarea
+      class="form-control"
+      id="message"
+      name="message"
+      rows="3"
+      placeholder="Enter your message..."
+    ></textarea>
+    <br />
+    <button type="submit" class="btn btn-primary">Send</button>
+  </div>
+</form>
+{% endblock %}

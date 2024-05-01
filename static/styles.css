@@ -1,0 +1,25 @@
+form, .textarea {
+  width: 50%;
+  margin: auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.messages {
+  width: 60%;
+  margin: auto;
+  position: relative;
+}
+
+div.messages button {
+  position: absolute;
+  right: 0;
+}
+
+.text {
+  text-align: center;
+  margin-top: 40px;
+}

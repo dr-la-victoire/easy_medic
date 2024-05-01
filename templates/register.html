@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Registration{% endblock %} {% block
+content %}
+<form method="post">
+  <h2 class="form-header">Pick your profession!</h2>
+  <select
+    class="form-select form-select-lg mb-3"
+    aria-label=".form-select-lg example"
+    name="category"
+  >
+    <option selected>
+      What is your profession? (select one from the dropdown)
+    </option>
+    <option value="doctor">Doctor</option>
+    <option value="nurse">Nurse</option>
+    <option value="pharmacist">Pharmacist</option>
+    <option value="dentist">Dentist</option>
+    <option value="optometrist">Optometrist</option>
+    <option value="mls">Medical Laboratory Scientist</option>
+    <option value="other">Other</option>
+  </select>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

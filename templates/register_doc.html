@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %}Registration{% endblock %} {% block
+content %}
+<h2 class="form-header">Register</h2>
+<form method="post">
+  <div class="mb-3 form-group">
+    <label for="username" class="form-label">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="username"
+      placeholder="Choose your username"
+    />
+  </div>
+  <div class="mb-3 form-group">
+    <label for="specialty" class="form-label">Specialty</label>
+    <input
+      type="text"
+      class="form-control"
+      id="specialty"
+      name="specialty"
+      placeholder="What is your specialty?"
+    />
+  </div>
+  <div class="mb-3 form-group">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Choose a password"
+    />
+  </div>
+  <div class="mb-3 form-group">
+    <label for="password" class="form-label">Confirm Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password_confirm"
+      name="password_confirm"
+      placeholder="Confirm your password"
+    />
+  </div>
+  <p>
+    Already registered? <a href="{{ url_for('auth.login') }}">Login here</a>
+  </p>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
