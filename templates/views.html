@@ -15,12 +15,21 @@ content %}
       <li class="list-group-item">{{ mes.message }}</li>
     </ul>
     <br />
-    <a
-      href="{{ url_for('views.send_messages') }}"
-      class="btn btn-primary"
-      style="text-align: center"
-      >Reply</a
-    >
+    <div class="d-flex justify-content-between">
+      <a
+        href="{{ url_for('views.send_messages') }}"
+        class="btn btn-primary"
+        style="text-align: center"
+        >Reply</a
+      >
+      <button
+        class="btn btn-primary"
+        onclick="deleteMessage({{ mes.id }})"
+        style="text-align: center"
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </div>
 <br />
