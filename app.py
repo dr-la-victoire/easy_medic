@@ -7,7 +7,6 @@ from website.models import db
 from website.models import User, Specialty, Profession, Messages
 from os import path
 from flask_login import LoginManager
-from flask_migrate import Migrate
 
 
 # app configurations
@@ -16,7 +15,6 @@ app.config['SECRET_KEY'] = "This is the secret key"
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
-migrate = Migrate(app, db)
 
 # registration of blueprint
 app.register_blueprint(auth_bp)
@@ -25,7 +23,6 @@ app.register_blueprint(views_bp)
 # creation of database
 if not path.exists('website/database.db'):
     db.create_all(app=app)
-    print("Database created!")
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
