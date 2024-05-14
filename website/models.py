@@ -2,7 +2,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from sqlalchemy.sql import func
-# from website.models import Messages
 
 db = SQLAlchemy()
 
@@ -16,6 +15,8 @@ class Messages(db.Model):
     receiver_id = db.Column(
         db.Integer, db.ForeignKey('user.id'), nullable=False)
 
+    # creating a relationship so there'd be a sender and receiver id in the Messages model
+    # the sender and receiver id will be from the User class
     sender = db.relationship(
         'User', foreign_keys=[sender_id], backref='sent')
     receiver = db.relationship(
@@ -32,6 +33,8 @@ class User(db.Model, UserMixin):
     profession_id = db.Column(db.Integer, db.ForeignKey(
         'profession.id'), nullable=False)
 
+    # creating a relationship with the profession and specialty classes
+    # that way, every user would have a profession and a specialty
     profession = db.relationship(
         'Profession', backref=db.backref('users'), lazy=True)
     specialty = db.relationship(
